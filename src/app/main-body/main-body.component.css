@@ -34,20 +34,33 @@ ul {
     padding-left: 1em;
 }
 
-
-
 select {
-    border: 1px solid #ccc;
     background-color: transparent;
-    height: 3.16em;
-    width: 13em;
-    padding: 10px;
-    text-align: bottom;
+    height: 3.15em;
+    width: 12.5em;
+}
+
+select.form-control {
+    text-indent: 4px;
 }
 
 .select-label {
     position: absolute;
     font-size: 12px;
     font-weight: 300;
-    padding: 0 50px 10px 10px;
+    padding: 0 50px 0px 14px;
+}
+
+.before-footer {
+    padding-bottom: 7em;
+}
+
+@media (max-width:1000px) {
+    select {
+        width: 100%;
+    }
+    select.form-control {
+        padding: 5px 0 0 8px;
+        text-indent: 0;
+    }
 }

@@ -87,3 +87,21 @@ div {
 .form-group {
     margin: 5px;
 }
+
+.form-control:focus {
+    border-color: #9ad2db;
+}
+
+.btn {
+    color: white;
+    background-color: #f0532d;
+    padding: 1.4em 1.7em;
+    border: none;
+    float: right;
+}
+
+@media (max-width:1000px) {
+    .btn {
+        width: 100%;
+    }
+}

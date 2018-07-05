@@ -6,5 +6,6 @@
 @media (max-width:1000px) {
     .main {
         padding-top: 0;
+        padding-right: 14px;
     }
 }
