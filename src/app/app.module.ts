@@ -4,12 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MainHeaderComponent } from './main-header/main-header.component';
+import { MainBodyComponent } from './main-body/main-body.component';
+import { MainFooterComponent } from './main-footer/main-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    SidebarComponent
+    SidebarComponent,
+    MainHeaderComponent,
+    MainBodyComponent,
+    MainFooterComponent
   ],
   imports: [
     BrowserModule

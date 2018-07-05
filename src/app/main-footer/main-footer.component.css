@@ -1,0 +1,23 @@
+/* Overwrite Bootstrap */
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    font-size: 0.9em;
+}
+
+.breadcrumb > li + li::before {
+    content: " ";
+    padding: 0 12px;
+}
+
+a:hover {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    color: #83b2b9;
+
+}
+
+.modal-title {
+    font-size: 30px;
+    font-weight: 500;
+}

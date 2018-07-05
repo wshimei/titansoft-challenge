@@ -1,0 +1,39 @@
+.logo {
+    max-height: 2.8em;
+    margin-top: 0;
+}
+
+/* Overwrite Bootstrap Breadcrumb */
+.breadcrumb {
+    background-color: transparent;
+    margin-top: 1em;
+    padding: 0;
+}
+
+.breadcrumb > li + li::before {
+    color: #999999;
+    content: ">";
+    padding: 0 10px;
+}
+
+.breadcrumb-item {
+    color: #999999;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.breadcrumb-item.active{
+    color: #4d4d4d;
+}
+
+@media (max-width:1000px) {
+    .logo {
+        max-height: 2.2em;
+        margin-top: 1.5em;
+    }
+    .breadcrumb {
+        display: none;
+    }
+    
+}
+
