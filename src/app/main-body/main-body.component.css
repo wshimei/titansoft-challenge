@@ -42,6 +42,7 @@ select {
 
 select.form-control {
     text-indent: 4px;
+    width: 13.4em;
 }
 
 .select-label {
