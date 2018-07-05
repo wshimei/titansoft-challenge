@@ -33,3 +33,21 @@ ul {
     font-size: 0.9em;
     padding-left: 1em;
 }
+
+
+
+select {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    height: 3.16em;
+    width: 13em;
+    padding: 10px;
+    text-align: bottom;
+}
+
+.select-label {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 0 50px 10px 10px;
+}
