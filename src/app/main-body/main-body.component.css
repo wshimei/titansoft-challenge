@@ -42,7 +42,7 @@ select {
 
 select.form-control {
     text-indent: 4px;
-    width: 13.4em;
+    width: 12.1em;
 }
 
 .select-label {
@@ -57,11 +57,9 @@ select.form-control {
 }
 
 @media (max-width:1000px) {
-    select {
-        width: 100%;
-    }
     select.form-control {
         padding: 5px 0 0 8px;
         text-indent: 0;
+        width: 100%;
     }
 }
