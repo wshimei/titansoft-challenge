@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    color: #737373;
+    background: white;
+    font-size: 14px;
+    font-family: Helvetica Neue, sans-serif;
+    line-height: 1.3em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+a {
+    cursor: pointer;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+}
+
+::selection {
+    background: #9ad2db;
+    color: #1f2a2c;
+}
+
+.breadcrumb {
+    background-color: transparent;
+}
+
+.breadcrumb > li + li:before {
+    color: #4d4d4d;
+    content: "> ";
+    padding: 0 5px;
+}
+
+.breadcrumb-item {
+    color: #999999;
+    font-weight: 500;
+}
+
+.breadcrumb-item.active{
+    color: #4d4d4d;
+}
