@@ -1,8 +1,65 @@
 .sidebar {
     display: block;
     padding-top: 4em;
-    padding-left: 44px;
+    padding-left: 35px;
     border-left: 1px solid #dadada;
     background: #f2f2f2;
     left:0;
+}
+
+.product-list {
+    display: block;
+}
+
+.product {
+    display: inline-block;
+}
+
+.product > img {
+    border: 1px solid #dadada;
+    border-radius: 8px;
+    width: 4.6em;
+    height: 4.6em;
+    z-index: 0;
+}
+
+.product > img.col-md-3 {
+    margin: 0;
+    padding: 0;
+}
+
+.product-details {
+    display: inline-block;
+    height: 4.6em;
+    vertical-align: middle;
+}
+
+.product-details > h4 {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #494949;
+    margin-bottom: 0;
+}
+
+.product-details > p {
+    font-size: 0.9em;
+    font-weight: 200;
+    color: #919191;
+}
+
+.product-price {
+    display: inline-block;
+    line-height: 4.6em;
+    vertical-align: middle;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #494949;
+}
+
+.product > .badge {
+    margin-left: -12px;
+    margin-top: -8px;
+    z-index: 1;
+    position: absolute;
+    background: rgba(153,153,153,0.9);
 }

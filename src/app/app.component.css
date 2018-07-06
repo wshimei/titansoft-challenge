@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.right-wrap {
+    padding-left: 0;
+}
+
 @media (max-width:1000px) {
     .wrap {
         max-width: 90%;

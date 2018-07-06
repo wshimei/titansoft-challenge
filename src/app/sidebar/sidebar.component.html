@@ -1,10 +1,15 @@
 <div class="sidebar">
         
-    <h1>sidebar</h1>
-    more 
-    somemore 
-    <p>s</p>
-    <p>s</p>
-    <p>s</p>
-    <p>s</p>
+  <ul class="product-list row">
+      <li class="product col-md-12">
+          <img class="col-md-3" src="{{product.imageURL}}" alt="{{product.name}}">
+          <span class="badge badge-pill badge-secondary">1</span>
+  
+          <div class="product-details col-md-7">
+              <h4>{{product.name}}</h4> 
+              <p>{{product.shipping}}</p>
+          </div>
+          <div class="product-price col-md-2">${{product.price}}</div>
+      </li>
+  </ul>
 </div>
