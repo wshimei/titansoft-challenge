@@ -10,9 +10,9 @@ export class SidebarComponent implements OnInit {
 
   product: Product = {
     id: 1,
-    name: 'Mini X',
+    name: 'Boosted Stealth',
     imageURL: '//cdn.shopify.com/s/files/1/0325/7933/products/boosted-stealth_small.jpg?653946253001957546',
-    price: 999,
+    price: 1599.00,
     shipping: 'NA / Ships in about 4 weeks'
   };
 

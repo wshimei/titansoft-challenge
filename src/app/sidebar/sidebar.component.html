@@ -5,11 +5,19 @@
           <img class="col-md-3" src="{{product.imageURL}}" alt="{{product.name}}">
           <span class="badge badge-pill badge-secondary">1</span>
   
-          <div class="product-details col-md-7">
+          <div class="product-details col-md-6">
               <h4>{{product.name}}</h4> 
               <p>{{product.shipping}}</p>
           </div>
-          <div class="product-price col-md-2">${{product.price}}</div>
+          <div class="product-price col-md-3">{{product.price | currency:'USD':'symbol'}}</div>
       </li>
   </ul>
+
+  <div class="separator"></div>
+
+  <div class="notes">
+      <h4><strong>Notes about your order</strong></h4>
+    
+
+  </div>
 </div>

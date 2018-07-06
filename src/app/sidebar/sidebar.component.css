@@ -34,7 +34,7 @@
     vertical-align: middle;
 }
 
-.product-details > h4 {
+h4 {
     font-size: 1.1em;
     font-weight: 500;
     color: #494949;
@@ -54,6 +54,7 @@
     font-size: 1.1em;
     font-weight: 500;
     color: #494949;
+    text-align: right;
 }
 
 .product > .badge {
@@ -62,4 +63,12 @@
     z-index: 1;
     position: absolute;
     background: rgba(153,153,153,0.9);
+}
+
+.notes {
+    background: white;
+}
+
+.separator {
+    color: rgba(48,48,48,0.85);
 }
