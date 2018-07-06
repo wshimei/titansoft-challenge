@@ -21,3 +21,13 @@ a:hover {
     font-size: 30px;
     font-weight: 500;
 }
+
+@media (max-width:1000px) {
+    .breadcrumb {
+        font-size: 0.85em;
+    }
+    .breadcrumb > li + li::before {
+        content: " ";
+        padding: 0 8px;
+    }
+}
