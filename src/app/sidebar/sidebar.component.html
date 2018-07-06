@@ -2,14 +2,14 @@
 
   <ul class="product-list row">
     <li class="product col-md-12">
-      <img class="col-md-3" src="{{product.imageURL}}" alt="{{product.name}}">
+      <img class="col-md-3 col-xs-3" src="{{product.imageURL}}" alt="{{product.name}}">
       <span class="badge badge-pill badge-secondary">1</span>
 
-      <div class="product-details col-md-6">
+      <div class="product-details col-md-6 col-xs-6">
         <h4>{{product.name}}</h4>
         <p>{{product.shippingNote}}</p>
       </div>
-      <div class="product-price col-md-3">{{product.price | currency:'USD':'symbol'}}</div>
+      <div class="product-price col-md-3 col-xs-3">{{product.price | currency:'USD':'symbol'}}</div>
     </li>
   </ul>
 
