@@ -12,4 +12,39 @@
     .wrap {
         max-width: 90%;
     }
+    .logo {
+        max-height: 2.2em;
+        margin-top: 1.5em;
+        margin-left: 1.5em;
+    }
+    .order-summary {
+        width: 100%;
+        margin-top: 1em;
+        padding: 10px 0;
+        text-align: left;
+        text-decoration: none;
+        color: #74c1ce;
+        background: #fafafa;
+        border-top: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .order-summary:focus {
+        outline-color: #9ad2db;
+    }
+    .btn-link-text {
+        margin-left: 1.5em;
+    }
+    .cart {
+        fill: #74c1ce;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 999px) {
+    .banner {
+        display: none;
+    }
+    .order-summary {
+        display: none;
+    }
 }

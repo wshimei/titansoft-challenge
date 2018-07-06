@@ -62,4 +62,12 @@ select.form-control {
         text-indent: 0;
         width: 100%;
     }
+    .amazon-button {
+        width: 100%;
+        height: 4em;
+        vertical-align: middle;
+    }
+    .amazon-pay {
+        padding: 1.5em 0em 0.5em 0em;
+    }
 }

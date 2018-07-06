@@ -28,12 +28,10 @@
 
 @media (max-width:1000px) {
     .logo {
-        max-height: 2.2em;
-        margin-top: 1.5em;
+        display: none;
     }
     .breadcrumb {
         display: none;
     }
-    
 }
 
