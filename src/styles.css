@@ -29,11 +29,6 @@ div {
     display: block;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
 ::selection {
     background: #9ad2db;
     color: #1f2a2c;

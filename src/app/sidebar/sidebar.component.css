@@ -1,7 +1,6 @@
 .sidebar {
     display: block;
-    padding-top: 4em;
-    padding-left: 35px;
+    padding: 4em 0 30em 35px;
     border-left: 1px solid #dadada;
     background: #f2f2f2;
     left:0;
@@ -9,6 +8,9 @@
 
 .product-list {
     display: block;
+    list-style-type: none;
+    padding: 0;
+    max-width: 500px;
 }
 
 .product {
@@ -65,10 +67,61 @@ h4 {
     background: rgba(153,153,153,0.9);
 }
 
-.notes {
-    background: white;
+.separator {
+    max-width: 400px;
+    padding-bottom: 15px;
 }
 
-.separator {
-    color: rgba(48,48,48,0.85);
+.separator::before {
+    background: #dadada;
+}
+
+.separator::after {
+    background: #dadada;
+}
+
+.notes {
+    background: white;
+    color: #494949;
+    margin: 25px 35px 20px 0;
+    padding: 15px;
+    border-radius: 4px;
+    max-width: 400px;
+}
+
+.notes > h4 {
+    margin-bottom: 1em;
+}
+
+.note-list {
+    padding: 15px;
+}
+
+.price-breakdown {
+    max-width: 400px;
+}
+
+.pull-right {
+    color: #494949;
+
+}
+
+.total-wrapper {
+    max-width: 400px;
+}
+
+.total-label {
+    color: #494949;
+}
+
+.total-price {
+    display: inline;
+    font-size: 1.7em;
+    font-weight: 600;
+}
+
+.currency {
+    color: #919191;
+    font-size: 12px;
+    font-weight: 300;
 }

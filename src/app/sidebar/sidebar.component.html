@@ -1,23 +1,50 @@
-<div class="sidebar">
-        
+<div class="sidebar" *ngFor="let product of products">
+
   <ul class="product-list row">
-      <li class="product col-md-12">
-          <img class="col-md-3" src="{{product.imageURL}}" alt="{{product.name}}">
-          <span class="badge badge-pill badge-secondary">1</span>
-  
-          <div class="product-details col-md-6">
-              <h4>{{product.name}}</h4> 
-              <p>{{product.shipping}}</p>
-          </div>
-          <div class="product-price col-md-3">{{product.price | currency:'USD':'symbol'}}</div>
-      </li>
+    <li class="product col-md-12">
+      <img class="col-md-3" src="{{product.imageURL}}" alt="{{product.name}}">
+      <span class="badge badge-pill badge-secondary">1</span>
+
+      <div class="product-details col-md-6">
+        <h4>{{product.name}}</h4>
+        <p>{{product.shippingNote}}</p>
+      </div>
+      <div class="product-price col-md-3">{{product.price | currency:'USD':'symbol'}}</div>
+    </li>
   </ul>
 
   <div class="separator"></div>
 
   <div class="notes">
-      <h4><strong>Notes about your order</strong></h4>
-    
+    <h4>
+      <strong>Notes about your order</strong>
+    </h4>
+    <ul *ngFor="let note of notes">
+      <li>{{note.note}}</li>
+    </ul>
+  </div>
 
+  <a href="#">Have a gift card?</a>
+
+  <div class="separator"></div>
+
+  <div class="price-breakdown">
+    <p>
+      Subtotal
+      <span class="pull-right">{{product.price | currency:'USD':'symbol'}}</span>
+    </p>
+    <p>Shipping
+      <span class="pull-right"> &mdash; </span>
+    </p>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="total-wrapper">
+    <p class="total-label">
+      Total
+        <span class="pull-right total-price"> <span class="currency"> USD </span> {{product.price | currency:'USD':'symbol'}}</span>
+       
+    </p>
   </div>
 </div>

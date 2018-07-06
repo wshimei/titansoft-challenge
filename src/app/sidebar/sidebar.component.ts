@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product';
+import { ProductService } from '../product.service';
+import { NOTES } from '../notes';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
+
 export class SidebarComponent implements OnInit {
 
-  product: Product = {
-    id: 1,
-    name: 'Boosted Stealth',
-    imageURL: '//cdn.shopify.com/s/files/1/0325/7933/products/boosted-stealth_small.jpg?653946253001957546',
-    price: 1599.00,
-    shipping: 'NA / Ships in about 4 weeks'
-  };
+  public products = [];
 
-  constructor() { }
+  notes = NOTES;
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    this.productService.getProducts()
+        .subscribe(data => this.products = data);
   }
 
 }

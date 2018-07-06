@@ -5,6 +5,7 @@
 
 .right-wrap {
     padding-left: 0;
+    min-width: 450px;
 }
 
 @media (max-width:1000px) {
