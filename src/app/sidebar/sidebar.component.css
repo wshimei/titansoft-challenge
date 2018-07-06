@@ -125,3 +125,16 @@ h4 {
     font-size: 12px;
     font-weight: 300;
 }
+
+@media (max-width:1000px) {
+    .sidebar {
+        padding: 1em 0 2em 1.2em;
+        margin: 0 auto;
+    }
+    .total-wrapper, .price-breakdown{
+        padding-right: 1.2em;
+    }
+    .separator {
+        padding-right: 1.2em;
+    }
+}

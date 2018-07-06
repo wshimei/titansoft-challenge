@@ -12,6 +12,11 @@
     .wrap {
         max-width: 90%;
     }
+    .right-wrap {
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+    }
     .logo {
         max-height: 2.2em;
         margin-top: 1.5em;
