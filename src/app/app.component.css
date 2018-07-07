@@ -8,7 +8,7 @@
     min-width: 450px;
 }
 
-@media (max-width:1000px) {
+@media (max-width: 992px) {
     .wrap {
         max-width: 90%;
     }
@@ -45,11 +45,18 @@
     }
 }
 
-@media (min-width: 999px) {
+@media (min-width: 993px) {
     .banner {
         display: none;
     }
     .order-summary {
         display: none;
+    }
+}
+
+@media (min-width: 993px) and (max-width:1050px) {
+    .main {
+        max-width: 540px;
+        padding: 0;
     }
 }

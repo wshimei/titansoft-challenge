@@ -69,7 +69,7 @@ h4 {
 
 .separator {
     max-width: 400px;
-    padding-bottom: 15px;
+    padding: 0 30px 15px 0;
 }
 
 .separator::before {
@@ -87,6 +87,7 @@ h4 {
     padding: 15px;
     border-radius: 4px;
     max-width: 400px;
+    min-width: 335px;
 }
 
 .notes > h4 {
@@ -99,11 +100,12 @@ h4 {
 
 .price-breakdown {
     max-width: 400px;
+    padding: 0;
 }
 
 .pull-right {
     color: #494949;
-
+    padding-right: 30px;
 }
 
 .total-wrapper {
@@ -126,7 +128,11 @@ h4 {
     font-weight: 300;
 }
 
-@media (max-width:1000px) {
+.no-padding {
+    padding: 0;
+}
+
+@media (max-width: 992px) {
     .sidebar {
         padding: 1em 0 2em 1.2em;
         margin: 0 auto;

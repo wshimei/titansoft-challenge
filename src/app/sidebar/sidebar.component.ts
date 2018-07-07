@@ -23,10 +23,10 @@ export class SidebarComponent implements OnInit {
       .subscribe(data => this.products = data);
 
     $(window).resize(function () {
-      if ($(window).width() > 1000) {
-        $('#sidebar').removeClass('collapse');
-      } else {
+      if ($(window).width() <= 992) {
         $('#sidebar').addClass('collapse');
+      } else {
+        $('#sidebar').removeClass('collapse');
       }
     });
   }

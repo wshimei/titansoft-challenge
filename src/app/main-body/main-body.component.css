@@ -56,7 +56,7 @@ select.form-control {
     padding-bottom: 7em;
 }
 
-@media (max-width:1000px) {
+@media (max-width: 992px) {
     select.form-control {
         padding: 5px 0 0 8px;
         text-indent: 0;
@@ -71,3 +71,4 @@ select.form-control {
         padding: 1.5em 0em 0.5em 0em;
     }
 }
+

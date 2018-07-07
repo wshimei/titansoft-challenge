@@ -100,7 +100,7 @@ div {
     float: right;
 }
 
-@media (max-width:1000px) {
+@media (max-width:993px) {
     .btn {
         width: 100%;
     }

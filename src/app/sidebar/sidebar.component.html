@@ -10,11 +10,11 @@
         <p>{{product.shippingNote}}</p>
       </div>
       <div class="product-price col-md-3 col-xs-3">{{product.price | currency:'USD':'symbol'}}</div>
+      <div class="separator col-md-12"></div>
     </li>
   </ul>
 
-  <div class="separator"></div>
-
+<div class="col-md-12 col-xs-12 no-padding">
   <div class="notes">
     <h4>
       <strong>Notes about your order</strong>
@@ -23,11 +23,10 @@
       <li>{{note.note}}</li>
     </ul>
   </div>
-
   <a href="#">Have a gift card?</a>
-
   <div class="separator"></div>
-
+</div>
+  
   <div class="price-breakdown">
     <p>
       Subtotal
@@ -36,15 +35,12 @@
     <p>Shipping
       <span class="pull-right"> &mdash; </span>
     </p>
+    <div class="separator"></div>
   </div>
-
-  <div class="separator"></div>
-
   <div class="total-wrapper">
     <p class="total-label">
       Total
         <span class="pull-right total-price"> <span class="currency"> USD </span> {{product.price | currency:'USD':'symbol'}}</span>
-       
     </p>
   </div>
 </div>

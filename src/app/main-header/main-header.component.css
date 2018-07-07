@@ -26,7 +26,7 @@
     color: #4d4d4d;
 }
 
-@media (max-width:1000px) {
+@media (max-width: 992px) {
     .logo {
         display: none;
     }
