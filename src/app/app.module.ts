@@ -8,6 +8,7 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainBodyComponent } from './main-body/main-body.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouteRoutingModule, routingComponents } from '../app/route/route-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
     MainComponent,
     SidebarComponent,
     MainHeaderComponent,
-    MainBodyComponent,
-    MainFooterComponent
+    MainFooterComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouteRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

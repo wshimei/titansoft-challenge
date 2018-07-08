@@ -148,4 +148,14 @@ h4 {
         font-weight: 500;
         padding-right: 0;
     }
+    .notes {
+        min-width:80%;    
+        margin-top: 5px;
+    }
+    .no-padding {
+        padding-right: 15px;
+    }
+    .pull-right {
+        padding-right: 15px;
+    }
 }
