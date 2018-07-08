@@ -11,8 +11,8 @@ export class CustomerInfo {
         protected city: string,
         protected country: string,
         protected state: string,
-        protected zipcode: number,
-        protected phone: number,
+        protected zipcode: string,
+        protected phone: string,
         public saveInfo: boolean
     ) { }
 }
