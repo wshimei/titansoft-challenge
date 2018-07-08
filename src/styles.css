@@ -100,6 +100,20 @@ div {
     float: right;
 }
 
+.btn:hover {
+    color: white;
+    background-color: #cc4929;
+}
+
+.invalid-feedback {
+    color: #ff6d6d;
+    font-size: small;
+}
+
+.ng-invalid:not(form):not(.ng-pristine)  {
+    border: 2px solid #ff6d6d; 
+  }
+
 @media (max-width:993px) {
     .btn {
         width: 100%;

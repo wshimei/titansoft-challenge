@@ -5,6 +5,7 @@ import { ShippingMethodComponent } from '../shipping-method/shipping-method.comp
 import { PaymentMethodComponent } from '../payment-method/payment-method.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/customer-information', pathMatch: 'full'},
   { path: 'customer-information', component: MainBodyComponent },
   { path: 'shipping-method', component: ShippingMethodComponent },
   { path: 'payment-method', component: PaymentMethodComponent}
