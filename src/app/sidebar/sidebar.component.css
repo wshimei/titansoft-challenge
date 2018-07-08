@@ -68,7 +68,7 @@ h4 {
 }
 
 .separator {
-    max-width: 400px;
+    max-width: 450px;
     padding: 0 30px 15px 0;
 }
 
@@ -86,8 +86,9 @@ h4 {
     margin: 25px 35px 20px 0;
     padding: 15px;
     border-radius: 4px;
-    max-width: 400px;
-    min-width: 335px;
+    max-width: 450px;
+    min-width: 300px;
+    display: block;
 }
 
 .notes > h4 {
@@ -98,8 +99,16 @@ h4 {
     padding: 15px;
 }
 
+.gift-card {
+    width:1005;
+}
+
 .price-breakdown {
-    max-width: 400px;
+    max-width: 450px;
+    padding: 0;
+}
+
+.price-breakdown.separator {
     padding: 0;
 }
 
@@ -109,7 +118,7 @@ h4 {
 }
 
 .total-wrapper {
-    max-width: 400px;
+    max-width: 450px;
 }
 
 .total-label {
@@ -128,7 +137,12 @@ h4 {
     font-weight: 300;
 }
 
-.no-padding {
+.note-wrap {
+    padding: 0 35px 0 0;
+    max-width: 450px;;
+}
+
+.gift-card {
     padding: 0;
 }
 
@@ -137,7 +151,7 @@ h4 {
         padding: 1em 0 2em 1.2em;
         margin: 0 auto;
     }
-    .total-wrapper, .price-breakdown{
+    .total-wrapper{
         padding-right: 1.2em;
     }
     .separator {
@@ -152,10 +166,16 @@ h4 {
         min-width:80%;    
         margin-top: 5px;
     }
-    .no-padding {
+    .note-wrap {
         padding-right: 15px;
     }
     .pull-right {
+        padding-right: 0;
+    }
+    .price-breakdown {
         padding-right: 15px;
+    }
+    .price-breakdown > .separator {
+        padding-right: 0;
     }
 }
