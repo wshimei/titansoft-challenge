@@ -14,7 +14,7 @@
 </div>
 
 <div>
-  <form (ngSubmit)="checkFormValidation()" #form="ngForm" id="mainForm" action="shipping-method">
+  <form (ngSubmit)="checkFormValidation()" #form="ngForm" id="mainForm">
     <div class="form-group">
 
       <h3>Contact Information</h3>
@@ -120,10 +120,10 @@
           </label>
         </div>
         <div class="before-footer">
-          <button type="submit" class="btn">Continue to shipping method</button>
+          <button type="submit" class="btn" (click)="addCustomer()">Continue to shipping method</button>
         </div>
         {{customer | json}}
-        {{newCustomer | json}}
+        {{ newCustomer | json}}
       </div>
     </div>
   </form>

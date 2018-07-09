@@ -49,6 +49,8 @@ export class CustomerService {
   constructor() { }
 
   addCustomer(newCustomer) {
-    this._customerInfo.next(newCustomer);
+    this._customerInfo = new BehaviorSubject<CustomerInterface> (newCustomer);
+    console.log(this._customerInfo);
+    
   }
 }

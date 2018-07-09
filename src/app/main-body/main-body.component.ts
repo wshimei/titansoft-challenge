@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
 
 import { CustomerInfo, CustomerInterface } from './../customer-info';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -23,6 +24,8 @@ export class MainBodyComponent implements OnInit {
   // tslint:disable-next-line:max-line-length
   canadaStates = ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Northwest Territories', 'Nova Scotia', 'Nunavut', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Yukon Territory'];
 
+  constructor(private customerService: CustomerService, private _router: Router) {
+  }
 
   submitted = false;
 
@@ -36,17 +39,14 @@ export class MainBodyComponent implements OnInit {
         }
       });
     } else {
-      this.addCustomer();
       this.submitted = true;
-      location.href = '/shipping-method';
+      this._router.navigate(['/shipping-method']);
     }
   }
 
-  constructor(private customerService: CustomerService) {
-  }
-
   addCustomer() {
-    this.customerService.addCustomer(this.newCustomer);
+    console.log(this.customer);
+    this.customerService.addCustomer(this.customer);
   }
 
   ngOnInit() {
