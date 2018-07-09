@@ -13,6 +13,7 @@ declare var $: any;
 export class MainBodyComponent implements OnInit {
 
   customer: CustomerInterface;
+  newCustomer: CustomerInterface;
 
   countries = ['United States', 'Canada'];
 
@@ -35,15 +36,17 @@ export class MainBodyComponent implements OnInit {
         }
       });
     } else {
+      this.addCustomer();
       this.submitted = true;
       location.href = '/shipping-method';
     }
   }
 
-  // remove when done
-  get diagnostic() {return JSON.stringify(this.customer); }
-
   constructor(private customerService: CustomerService) {
+  }
+
+  addCustomer() {
+    this.customerService.addCustomer(this.newCustomer);
   }
 
   ngOnInit() {

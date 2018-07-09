@@ -26,6 +26,11 @@
     color: #4d4d4d;
 }
 
+.disabled {
+    pointer-events: none;
+    cursor:default
+}
+
 @media (max-width: 992px) {
     .logo {
         display: none;

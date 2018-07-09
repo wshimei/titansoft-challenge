@@ -13,8 +13,6 @@ export class ShippingMethodComponent implements OnInit {
 
   constructor(private customerService: CustomerService) { }
 
-  get diagnostic() {return JSON.stringify(this.customer); }
-
   ngOnInit() {
     this.customerService.customerInfo$.subscribe(customer => this.customer = customer);
   }
