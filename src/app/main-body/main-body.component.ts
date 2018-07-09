@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerInfo } from '../customer-info';
+import { CustomerService } from '../customer.service';
 
+import { CustomerInfo, CustomerInterface } from './../customer-info';
 
 declare var $: any;
 
@@ -11,7 +12,7 @@ declare var $: any;
 })
 export class MainBodyComponent implements OnInit {
 
-  customer = new CustomerInfo(1, '', false, '', '', '', '', '', '', '', '', '', '', false);
+  customer: CustomerInterface;
 
   countries = ['United States', 'Canada'];
 
@@ -25,7 +26,6 @@ export class MainBodyComponent implements OnInit {
   submitted = false;
 
   checkFormValidation () {
-    console.log($('#mainForm').hasClass('ng-invalid'));
     if ($('#mainForm').hasClass('ng-invalid')) {
       const $inputs = $('#mainForm :input');
       $.each($inputs, function (index, val) {
@@ -43,9 +43,12 @@ export class MainBodyComponent implements OnInit {
   // remove when done
   get diagnostic() {return JSON.stringify(this.customer); }
 
-  constructor() { }
+  constructor(private customerService: CustomerService) {
+  }
 
   ngOnInit() {
+    this.customerService.customerInfo$.subscribe(customer => this.customer = customer);
+
     const $inputs = $('#mainForm :input');
       $.each($inputs, function (index, val) {
         $(val).change(() => {

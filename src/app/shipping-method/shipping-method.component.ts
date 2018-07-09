@@ -1,3 +1,5 @@
+import { CustomerInterface } from './../customer-info';
+import { CustomerService } from './../customer.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShippingMethodComponent implements OnInit {
 
-  constructor() { }
+  customer: CustomerInterface;
+
+  constructor(private customerService: CustomerService) { }
+
+  get diagnostic() {return JSON.stringify(this.customer); }
 
   ngOnInit() {
+    this.customerService.customerInfo$.subscribe(customer => this.customer = customer);
   }
 
 }

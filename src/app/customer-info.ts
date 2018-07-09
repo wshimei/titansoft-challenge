@@ -16,3 +16,20 @@ export class CustomerInfo {
         public saveInfo: boolean
     ) { }
 }
+
+export interface CustomerInterface {
+    id: number;
+    email: string;
+    subscribe: boolean;
+    firstName: string;
+    lastName: string;
+    company: string;
+    address: string;
+    apartment: string;
+    city: string;
+    country: string;
+    state: string;
+    zipcode: string;
+    phone: string;
+    saveInfo: boolean;
+}

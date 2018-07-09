@@ -10,6 +10,8 @@ import { MainFooterComponent } from './main-footer/main-footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouteRoutingModule, routingComponents } from '../app/route/route-routing.module';
 
+import { CustomerService } from './customer.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,7 @@ import { RouteRoutingModule, routingComponents } from '../app/route/route-routin
     RouteRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
