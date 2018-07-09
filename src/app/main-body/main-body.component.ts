@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerInfo } from '../customer-info';
 
+
+declare var $: any;
+
 @Component({
   selector: 'app-main-body',
   templateUrl: './main-body.component.html',
@@ -21,13 +24,20 @@ export class MainBodyComponent implements OnInit {
 
   submitted = false;
 
-  onSubmit() {
-    this.submitted = true;
-    console.log('submitted');
-  }
-
   checkFormValidation () {
-    console.log(this.customer);
+    console.log($('#mainForm').hasClass('ng-invalid'));
+    if ($('#mainForm').hasClass('ng-invalid')) {
+      const $inputs = $('#mainForm :input');
+      $.each($inputs, function (index, val) {
+        if ($(val).hasClass('ng-invalid')) {
+          $(val).next('.invalid-feedback').show();
+          $(val).removeClass('ng-pristine');
+        }
+      });
+    } else {
+      this.submitted = true;
+      location.href = '/shipping-method';
+    }
   }
 
   // remove when done
@@ -36,6 +46,14 @@ export class MainBodyComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    const $inputs = $('#mainForm :input');
+      $.each($inputs, function (index, val) {
+        $(val).change(() => {
+          if ($(val).hasClass('ng-valid')) {
+            $(val).next('.invalid-feedback').hide();
+        }
+        });
+      });
   }
 
 }

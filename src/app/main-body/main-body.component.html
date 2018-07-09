@@ -14,7 +14,7 @@
 </div>
 
 <div>
-  <form (ngSubmit)="onSubmit()" #form="ngForm">
+  <form (ngSubmit)="checkFormValidation()" #form="ngForm" id="mainForm" action="shipping-method">
     <div class="form-group">
 
       <h3>Contact Information</h3>
@@ -120,8 +120,9 @@
           </label>
         </div>
         <div class="before-footer">
-          <button type="submit" class="btn" (click)="checkFormValidation()">Continue to shipping method</button>
+          <button type="submit" class="btn">Continue to shipping method</button>
         </div>
+        {{diagnostic}}
       </div>
     </div>
   </form>

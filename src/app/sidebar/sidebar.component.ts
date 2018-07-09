@@ -20,7 +20,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.productService.getProducts()
-      .subscribe(data => this.products = data);
+        .subscribe(data => this.products = data);
 
     $(window).resize(function () {
       if ($(window).width() <= 992) {
