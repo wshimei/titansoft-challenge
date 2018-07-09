@@ -1,0 +1,17 @@
+.shippingAddressBox {
+    display: inline;
+    border: 1px solid #dadada;
+    background-color: #f2f2f2;
+    font-size: 0.9em;
+    padding: 10px;
+    /* margin: 30px; */
+}
+
+.shippingAddress {
+    color: #919191;
+}
+
+/* Overwrite bootstrap form */
+.form-check-input {
+    padding: 15px;
+}

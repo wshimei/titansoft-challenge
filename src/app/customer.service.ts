@@ -50,7 +50,5 @@ export class CustomerService {
 
   addCustomer(newCustomer) {
     this._customerInfo = new BehaviorSubject<CustomerInterface> (newCustomer);
-    console.log(this._customerInfo);
-    
   }
 }

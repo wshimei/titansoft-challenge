@@ -1,3 +1,7 @@
+footer {
+    height: 100px;
+}
+
 /* Overwrite Bootstrap */
 .breadcrumb {
     background: transparent;

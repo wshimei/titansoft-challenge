@@ -45,7 +45,6 @@ export class MainBodyComponent implements OnInit {
   }
 
   addCustomer() {
-    console.log(this.customer);
     this.customerService.addCustomer(this.customer);
   }
 
