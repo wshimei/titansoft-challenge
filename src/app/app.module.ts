@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouteRoutingModule, routingComponents } from '../app/route/route-routing.module';
 
 import { CustomerService } from './customer.service';
+import { PaymentService } from './payment.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,10 @@ import { CustomerService } from './customer.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [CustomerService],
+  providers: [
+    CustomerService,
+    PaymentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
