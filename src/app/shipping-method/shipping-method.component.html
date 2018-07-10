@@ -2,27 +2,28 @@
   <div class="col-sm-4">
     Shipping address:
   </div>
-  <div class="col-sm-7 shippingAddress">
+  <div class="col-sm-8 shippingAddress">
     <span *ngIf="customer.apartment != ''">
       {{customer.apartment}},
     </span>
     {{customer.address}}, {{customer.city}} {{customer.state}} {{customer.zipcode}}, {{customer.country}}
+    <a class="edit pull-right" (click)="goBack()">Edit</a>
   </div>
-  <a (click)="goBack()">Edit</a>
 </div>
 
 <form>
-  <div class="shippingMethodBox col-md-12">
+  <div class="shippingMethodBox col-xs-12 col-md-12">
     <h3>Shipping Method</h3>
 
-    <div class="shippingMethod col-md-12">
-      <div class="form-check col-md-9">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="free" checked [(ngModel)]="customer.shippingMethod" >
-        <label class="form-check-label" for="exampleRadios1">
+    <div class="shippingMethod col-xs-12 col-md-12">
+      <div class="form-check col-xs-9 col-md-9">
+        <!-- to use *ngFor if there are more payment methods -->
+        <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod1" value="free" [(ngModel)]="customer.shippingMethod">
+        <label class="form-check-label" for="paymentMethod1">
           Free Ground Shipping
         </label>
       </div>
-      <div class="col-md-3 text-right">Free</div>
+      <div class="col-xs-3 col-md-3 text-right">Free</div>
     </div>
   </div>
 
