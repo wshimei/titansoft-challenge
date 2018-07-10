@@ -1,0 +1,23 @@
+.shippingAddressBox {
+    /* display: inline; */
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 0.9em;
+    padding: 10px;
+    /* margin: 30px; */
+}
+
+.shippingAddress {
+    color: #919191;
+}
+
+.paymentMethod {
+    color: #919191;
+    padding-top: 10px;
+}
+
+.paymentMethodRow {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}

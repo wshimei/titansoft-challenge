@@ -1,7 +1,8 @@
+import { Component, OnInit } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { CustomerInterface } from './../customer-info';
 import { CustomerService } from './../customer.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-shipping-method',
@@ -11,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class ShippingMethodComponent implements OnInit {
 
   customer: CustomerInterface;
+  submitted = false;
 
   constructor(private customerService: CustomerService, private router: Router) { }
 
@@ -19,8 +21,8 @@ export class ShippingMethodComponent implements OnInit {
   }
 
   updateShipping() {
-    console.log(this.customer);
     this.customerService.addCustomer(this.customer.shippingMethod);
+    this.submitted = true;
     this.router.navigate(['/payment-method']);
   }
 

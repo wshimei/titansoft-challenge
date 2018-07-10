@@ -1,3 +1,22 @@
-<p>
-  payment-method works!
-</p>
+<div class="shippingAddressBox col-md-12">
+    <div class="col-sm-4">
+      Shipping address:
+    </div>
+    <div class="col-sm-8 shippingAddress">
+      <span *ngIf="customer.apartment != ''">
+        {{customer.apartment}},
+      </span>
+      {{customer.address}}, {{customer.city}} {{customer.state}} {{customer.zipcode}}, {{customer.country}}
+      <a class="edit pull-right" (click)="goBack('customer-information')">Edit</a>
+    </div>
+
+    <div class="separator col-md-12"></div>
+
+    <div class="col-sm-4 paymentMethodRow">
+        Payment Method:
+      </div>
+      <div class="col-sm-8 paymentMethod">
+        {{customer.shippingMethod}}
+        <a class="edit pull-right" (click)="goBack('shipping-method')">Edit</a>
+      </div>
+  </div>

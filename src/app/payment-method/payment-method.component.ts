@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CustomerService } from '../customer.service';
+import { CustomerInterface } from '../customer-info';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-payment-method',
   templateUrl: './payment-method.component.html',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentMethodComponent implements OnInit {
 
-  constructor() { }
+  customer: CustomerInterface;
+
+  constructor(private customerService: CustomerService, private router: Router) { }
+
+  goBack(link) {
+    this.router.navigate([link]);
+  }
 
   ngOnInit() {
+    this.customerService.customerInfo$.subscribe(customer => this.customer = customer);
   }
 
 }
