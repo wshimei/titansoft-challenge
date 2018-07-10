@@ -32,4 +32,5 @@ export interface CustomerInterface {
     zipcode: string;
     phone: string;
     saveInfo: boolean;
+    shippingMethod: string;
 }

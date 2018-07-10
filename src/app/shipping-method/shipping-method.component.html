@@ -8,17 +8,29 @@
     </span>
     {{customer.address}}, {{customer.city}} {{customer.state}} {{customer.zipcode}}, {{customer.country}}
   </div>
+  <a (click)="goBack()">Edit</a>
 </div>
 
-<div class="shippingMethodBox col-md-12">
-  <h3>Shipping Method</h3>
-  <div class="shippingMethod">
-    <div class="form-check col-9">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-      <label class="form-check-label" for="exampleRadios1">
-        Free Ground Shipping
-      </label>
+<form>
+  <div class="shippingMethodBox col-md-12">
+    <h3>Shipping Method</h3>
+
+    <div class="shippingMethod col-md-12">
+      <div class="form-check col-md-9">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="free" checked [(ngModel)]="customer.shippingMethod" >
+        <label class="form-check-label" for="exampleRadios1">
+          Free Ground Shipping
+        </label>
+      </div>
+      <div class="col-md-3 text-right">Free</div>
     </div>
-    <div class="col-3">Free</div>
   </div>
-</div>
+
+  <div class="navigation">
+    <a class="col-md-6 return" (click)="goBack()">
+      <span class="fa fa-angle-left"></span> Return to customer information</a>
+    <button type="submit" class="col-md-6 btn" (click)="updateShipping()">Continue to payment method</button>
+  </div>
+</form>
+
+<div class="before-footer"></div>
