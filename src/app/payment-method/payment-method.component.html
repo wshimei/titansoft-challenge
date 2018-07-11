@@ -1,3 +1,4 @@
+
 <div class="shippingAddressBox col-md-12">
   <div class="col-sm-4">
     Shipping address:
@@ -23,58 +24,84 @@
 
 <div class="paymentMethodBox col-md-12">
   <h3 class="paymentMethodLabel">Payment Method</h3>
-  <small>All transactions are secure and encrypted.</small>
+  <small class="note">All transactions are secure and encrypted.</small>
 
-  <div class="form-check paymentType">
+  <div class="form-check paymentType cc">
     <input class="form-check-input" type="radio" data-toggle="collapse" data-target="#ccInfo" aria-expanded="true" aria-controls="ccInfo">
     <label class="form-check-label" for="gridCheck" id="ccHeading">
       Credit card
     </label>
+  </div>
 
-    <div id="ccInfo" class="collapse" aria-labelledby="ccHeading" data-parent="#ccInfo">
-      <div class="card-body">
+  <div id="ccInfo" class="collapse" aria-labelledby="ccHeading" data-parent="#ccInfo">
+    <div class="card-body">
 
-        <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout collapsed">
-          <div class="form-row">
+      <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout collapsed">
+        <div class="form-row">
 
-            <div id="card-number" #cardNumber></div>
+          <div id="card-number" #cardNumber></div>
 
-            <div id="card-cvv" #cardExpiry></div>
+          <div class="row">
+            <input class="col-sm-5" type="text" id="card-holder" placeholder="Cardholder Name" [(ngModel)]="payment.cardHolderName" name="cardHolderName"
+              required>
 
-            <div id="card-expiry" #cardCvc></div>
+            <div class="col-sm-3" id="card-cvc" #cardCvc></div>
 
-            <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+            <div class="col-sm-3" id="card-expiry" #cardExpiry></div>
           </div>
-        </form>
 
-      </div>
+          <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+        </div>
+      </form>
+
     </div>
-
   </div>
 
-  <div class="paymentType">
+
+  <div class="paymentType paypal">
     <input class="form-check-input" type="radio">
     <label class="form-check-label" for="gridCheck">
-      paypal
+      <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="Paypal">
     </label>
-
   </div>
 
-  <div class="paymentType">
+  <div class="paymentType amazon">
     <input class="form-check-input" type="radio">
     <label class="form-check-label" for="gridCheck">
-      amazon
-
+      <img src="//cdn.shopify.com/s/assets/checkout/easy-checkout-btn-amazon-pay-72091bddbea7788c02d934d95d97fe6a0da7618cadc5838c40f44f190fa24442.png"
+        alt="Amazon Pay" style="width: 100px;">
     </label>
-
-
   </div>
 
-  <div class="paymentType">
+  <div class="paymentType affirm">
     <input class="form-check-input" type="radio">
-    <label class="form-check-label" for="gridCheck">
-      Alffrim
+    <label class="form-check-label" for="gridCheck" style="padding: 0px;">
+      <img src="https://cdn-assets.affirm.com/images/buttons/42x205-white-transparent-bg.png" alt="Affirm Pay" style="width: 200px;">
     </label>
   </div>
 </div>
-<button class="btn" type="submit">Complete order</button>
+
+<div class="paymentMethodBox col-md-12">
+  <h3 class="paymentMethodLabel">Billing Address</h3>
+
+  <div class="paymentType form-check" id="sameAdd">
+    <input class="form-check-input" type="radio">
+    <label class="form-check-label" for="gridCheck">
+      Same as shipping address
+    </label>
+  </div>
+
+  <div class="paymentType form-check">
+    <input class="form-check-input" type="radio">
+    <label class="form-check-label" for="gridCheck">
+      Use a different billing address
+    </label>
+  </div>
+
+  <div class="navigation col-md-12">
+    <a class="col-md-6 return" (click)="goBack('shipping-method')">
+      <span class="fa fa-angle-left"></span> Return to shipping method</a>
+    <button class="btn col-md-6 completeOrder" type="submit">Complete order</button>
+  </div>
+
+</div>

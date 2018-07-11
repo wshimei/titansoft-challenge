@@ -1,62 +1,122 @@
 .shippingAddressBox {
-    /* display: inline; */
-    border: 1px solid #dadada;
-    border-radius: 4px;
-    background-color: #fafafa;
-    font-size: 0.9em;
-    padding: 10px;
-    /* margin: 30px; */
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  background-color: #fafafa;
+  font-size: 0.9em;
+  padding: 10px;
 }
 
 .shippingAddress {
-    color: #919191;
+  color: #919191;
 }
 
 .shippingMethod {
-    color: #919191;
-    padding-top: 10px;
+  color: #919191;
+  padding-top: 10px;
 }
 
 .shippingMethodRow {
-    padding-top: 10px;
-    padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .paymentMethodBox {
-    padding: 0;
+  padding: 0;
 }
 
 .paymentMethodLabel {
-    margin-bottom: 0;
-    margin-top: 50px;
+  margin-bottom: 0;
+  margin-top: 50px;
 }
 
 .paymentType {
-    border: 1px solid #dadada;
-    border-radius: 4px;
-    padding: 10px 15px;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+.cc {
+  padding: 13px 15px;
+  margin-top: 20px;
+}
+
+.paypal {
+  padding-bottom: 9px;
+}
+
+.amazon {
+  padding-top: 15px;
+  padding-bottom: 9px;
+}
+
+.affirm {
+  padding: 0;
+  padding-left: 15px;
+}
+
+.checkout {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #dadada;
+}
+
+.completeOrder {
+  margin-top: 20px;
 }
 
 /* stripe styles */
-.StripeElement {
-    margin: 1rem 0 1rem;
-    background-color: white;
-    padding: 8px 12px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    box-shadow: 0 1px 3px 0 #e6ebf1;
-    -webkit-transition: box-shadow 150ms ease;
-    transition: box-shadow 150ms ease;
-  }
-  
-  .StripeElement--focus {
-    box-shadow: 0 1px 3px 0 #cfd7df;
-  }
-  
-  .StripeElement--invalid {
-    border-color: #fa755a;
-  }
-  
-  .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;
-  }
+
+.StripeElement, #card-holder {
+  margin: 1rem 0 1rem;
+  background-color: white;
+  padding: 15px 12px;
+  border-radius: 4px;
+  border: 1px solid #dadada;
+  /* box-shadow: 0 1px 3px 0 #e6ebf1; */
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus, #cardHolderDiv:active {
+  border-color: #9ad2db;
+  box-shadow: 0 0 5px #9ad2db;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+#card-cvc {
+  display: inline-block;
+  width: 130px;
+  margin-right: 15px;
+}
+
+#card-expiry {
+  display: inline-block;
+  width: 130px;
+}
+
+#card-holder{
+  display:inline-block;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+#sameAdd {
+  margin-top: 20px;
+}
+
+.navigation {
+  padding: 30px 0;
+  margin-bottom: 100px;
+}
+
+.return{
+  padding: 1.4em 0;
+  font-size: 0.9em;
+}

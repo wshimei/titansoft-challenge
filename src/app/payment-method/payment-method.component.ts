@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef, OnDestroy } from '@angular/core';
 
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 import { CustomerService } from '../customer.service';
 import { CustomerInterface } from '../customer-info';
-import { Router } from '@angular/router';
-
-import { NgForm } from '@angular/forms';
+import { PaymentService } from './../payment.service';
+import { PaymentInterface } from './../paymentInterface';
 
 declare var stripe: any;
 declare var elements: any;
@@ -16,8 +17,6 @@ declare var elements: any;
 })
 export class PaymentMethodComponent implements OnInit, OnDestroy {
 
-  @ViewChild('cardInfo') cardInfo: ElementRef;
-
   card: any;
   cardNumber: any;
   cardCvc: any;
@@ -27,8 +26,12 @@ export class PaymentMethodComponent implements OnInit, OnDestroy {
   error: string;
 
   customer: CustomerInterface;
+  payment: PaymentInterface;
 
-  constructor(private customerService: CustomerService, private router: Router, private cd: ChangeDetectorRef) { }
+  constructor(private customerService: CustomerService,
+              private router: Router,
+              private cd: ChangeDetectorRef,
+              private paymentService: PaymentService) { }
 
   goBack(link) {
     this.router.navigate([link]);
@@ -36,23 +39,17 @@ export class PaymentMethodComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.customerService.customerInfo$.subscribe(customer => this.customer = customer);
+    this.paymentService.paymentDetails$.subscribe(payment => this.payment = payment);
 
-    // this.card = elements.create('card');
-    // this.card.mount(this.cardInfo.nativeElement);
-
-    // trying
-    this.cardNumber = elements.create('cardNumber');
+    this.cardNumber = elements.create('cardNumber', {placeholder: 'Credit card number'});
     this.cardNumber.mount('#card-number');
 
     this.cardCvc = elements.create('cardCvc');
-    this.cardCvc.mount('#card-cvv');
+    this.cardCvc.mount('#card-cvc');
 
     this.cardExpiry = elements.create('cardExpiry');
     this.cardExpiry.mount('#card-expiry');
 
-    // end trial
-
-    // this.card.addEventListener('change', this.cardHandler);
     this.cardNumber.addEventListener('change', this.cardHandler);
     this.cardCvc.addEventListener('change', this.cardHandler);
     this.cardExpiry.addEventListener('change', this.cardHandler);
