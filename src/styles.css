@@ -92,6 +92,12 @@ div {
     border-color: #9ad2db;
 }
 
+.form-check-label {
+    padding-left: 15px;
+    font-size: 1em;
+    font-weight: 300;
+}
+
 .btn {
     color: white;
     background-color: #f0532d;

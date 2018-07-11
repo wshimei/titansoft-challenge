@@ -22,6 +22,21 @@
     padding-bottom: 5px;
 }
 
+.paymentMethodBox {
+    padding: 0;
+}
+
+.paymentMethodLabel {
+    margin-bottom: 0;
+    margin-top: 50px;
+}
+
+.paymentType {
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    padding: 10px 15px;
+}
+
 /* stripe styles */
 .StripeElement {
     margin: 1rem 0 1rem;

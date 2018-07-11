@@ -1,41 +1,80 @@
 <div class="shippingAddressBox col-md-12">
-    <div class="col-sm-4">
-      Shipping address:
-    </div>
-    <div class="col-sm-8 shippingAddress">
-      <span *ngIf="customer.apartment != ''">
-        {{customer.apartment}},
-      </span>
-      {{customer.address}}, {{customer.city}} {{customer.state}} {{customer.zipcode}}, {{customer.country}}
-      <a class="edit pull-right" (click)="goBack('customer-information')">Edit</a>
-    </div>
-
-    <div class="separator col-md-12"></div>
-
-    <div class="col-sm-4 shippingMethodRow">
-        Shipping Method:
-      </div>
-      <div class="col-sm-8 shippingMethod">
-        {{customer.shippingMethod}}
-        <a class="edit pull-right" (click)="goBack('shipping-method')">Edit</a>
-      </div>
+  <div class="col-sm-4">
+    Shipping address:
+  </div>
+  <div class="shippingAddress col-sm-8 ">
+    <span *ngIf="customer.apartment != ''">
+      {{customer.apartment}},
+    </span>
+    {{customer.address}}, {{customer.city}} {{customer.state}} {{customer.zipcode}}, {{customer.country}}
+    <a class="edit pull-right" (click)="goBack('customer-information')">Edit</a>
   </div>
 
+  <div class="separator col-md-12"></div>
 
+  <div class="shippingMethodRow col-sm-4">
+    Shipping Method:
+  </div>
+  <div class="shippingMethod col-sm-8">
+    {{customer.shippingMethod}}
+    <a class="edit pull-right" (click)="goBack('shipping-method')">Edit</a>
+  </div>
+</div>
 
-  <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout">
-      <div class="form-row">
-        <label for="card-info">Card Info</label>
-        <!-- <div id="card-info" #cardInfo></div> -->
-    
-        <div id="card-number" #cardNumber></div>
+<div class="paymentMethodBox col-md-12">
+  <h3 class="paymentMethodLabel">Payment Method</h3>
+  <small>All transactions are secure and encrypted.</small>
 
-        <div id="card-cvv" #cardExpiry></div>
+  <div class="form-check paymentType">
+    <input class="form-check-input" type="radio" data-toggle="collapse" data-target="#ccInfo" aria-expanded="true" aria-controls="ccInfo">
+    <label class="form-check-label" for="gridCheck" id="ccHeading">
+      Credit card
+    </label>
 
-        <div id="card-expiry" #cardCvc></div>
+    <div id="ccInfo" class="collapse" aria-labelledby="ccHeading" data-parent="#ccInfo">
+      <div class="card-body">
 
-        <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+        <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout collapsed">
+          <div class="form-row">
+
+            <div id="card-number" #cardNumber></div>
+
+            <div id="card-cvv" #cardExpiry></div>
+
+            <div id="card-expiry" #cardCvc></div>
+
+            <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+          </div>
+        </form>
+
       </div>
-    
-      <button class="btn" type="submit">Complete order</button>
-    </form>
+    </div>
+
+  </div>
+
+  <div class="paymentType">
+    <input class="form-check-input" type="radio">
+    <label class="form-check-label" for="gridCheck">
+      paypal
+    </label>
+
+  </div>
+
+  <div class="paymentType">
+    <input class="form-check-input" type="radio">
+    <label class="form-check-label" for="gridCheck">
+      amazon
+
+    </label>
+
+
+  </div>
+
+  <div class="paymentType">
+    <input class="form-check-input" type="radio">
+    <label class="form-check-label" for="gridCheck">
+      Alffrim
+    </label>
+  </div>
+</div>
+<button class="btn" type="submit">Complete order</button>
