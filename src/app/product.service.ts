@@ -9,7 +9,7 @@ import { ProductInterface } from './productInterface';
 
 export class ProductService {
 
-  private url = '/assets/products.json';
+  private url = 'assets/products.json';
 
   constructor(private http: HttpClient) { }
 
