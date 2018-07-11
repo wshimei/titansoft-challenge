@@ -1,6 +1,8 @@
+import { CustomerService } from './../customer.service';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { NOTES } from '../notes';
+import { CustomerInterface } from '../customer-info';
 
 declare var $: any;
 
@@ -16,9 +18,13 @@ export class SidebarComponent implements OnInit {
 
   notes = NOTES;
 
-  constructor(private productService: ProductService) {}
+  customer: CustomerInterface;
+
+  constructor(private productService: ProductService, private customerService: CustomerService) {}
 
   ngOnInit() {
+    this.customerService.customerInfo$.subscribe(customer => this.customer = customer);
+
     this.productService.getProducts()
         .subscribe(data => this.products = data);
 

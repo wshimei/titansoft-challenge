@@ -12,11 +12,30 @@
 
     <div class="separator col-md-12"></div>
 
-    <div class="col-sm-4 paymentMethodRow">
-        Payment Method:
+    <div class="col-sm-4 shippingMethodRow">
+        Shipping Method:
       </div>
-      <div class="col-sm-8 paymentMethod">
+      <div class="col-sm-8 shippingMethod">
         {{customer.shippingMethod}}
         <a class="edit pull-right" (click)="goBack('shipping-method')">Edit</a>
       </div>
   </div>
+
+
+
+  <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout">
+      <div class="form-row">
+        <label for="card-info">Card Info</label>
+        <!-- <div id="card-info" #cardInfo></div> -->
+    
+        <div id="card-number" #cardNumber></div>
+
+        <div id="card-cvv" #cardExpiry></div>
+
+        <div id="card-expiry" #cardCvc></div>
+
+        <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+      </div>
+    
+      <button class="btn" type="submit">Complete order</button>
+    </form>

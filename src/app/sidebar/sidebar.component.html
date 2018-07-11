@@ -36,7 +36,8 @@
       <span class="pull-right">{{product.price | currency:'USD':'symbol'}}</span>
     </p>
     <p>Shipping
-      <span class="pull-right"> &mdash; </span>
+      <span class="pull-right" *ngIf="customer.shippingMethod === ''"> &mdash; </span>
+      <span class="pull-right" *ngIf="customer.shippingMethod">{{customer.shippingMethod}}</span>
     </p>
     <div class="separator"></div>
   </div>
