@@ -9,6 +9,7 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouteRoutingModule, routingComponents } from '../app/route/route-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { CustomerService } from './customer.service';
 import { PaymentService } from './payment.service';
@@ -20,7 +21,8 @@ import { PaymentService } from './payment.service';
     SidebarComponent,
     MainHeaderComponent,
     MainFooterComponent,
-    routingComponents
+    routingComponents,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
