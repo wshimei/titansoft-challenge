@@ -11,7 +11,7 @@ export class PaymentService {
   constructor() { }
 
   private _paymentDetails = new BehaviorSubject<PaymentInterface>({
-    cardHolderName: ''
+    cardHolderName: '', billingAddress: []
   });
 
   paymentDetails$ = this._paymentDetails.asObservable();

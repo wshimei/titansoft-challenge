@@ -91,11 +91,106 @@
     </label>
   </div>
 
+  <div>
   <div class="paymentType form-check">
-    <input class="form-check-input" type="radio">
+    <input class="form-check-input" type="radio" data-toggle="collapse" data-target="#mainForm" id="diffBillingAdd">
     <label class="form-check-label" for="gridCheck">
       Use a different billing address
     </label>
+  </div>
+
+  <div class="form-check billingAddressForm collapse" id="mainForm" data-parent="#diffBillingAdd">
+    <form #form="ngForm">
+        <div class="form-group">
+    
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="inputFirstname" placeholder="First Name" [(ngModel)]="customer.firstName" name="firstName"
+                #firstName="ngModel" required>
+              <div [hidden]="firstName.valid || firstName.pristine" class="invalid-feedback">
+                Please enter your first name
+              </div>
+            </div>
+    
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="inputLastname" placeholder="Last Name" [(ngModel)]="customer.lastName" name="lastName"
+                #lastName="ngModel" required>
+              <div [hidden]="lastName.valid || lastName.pristine" class="invalid-feedback">
+                Please enter your last name
+              </div>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputCompany" placeholder="Company (optional)" [(ngModel)]="customer.company"
+              name="company">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputAddress" placeholder="Address" [(ngModel)]="customer.address" name="address"
+              #address="ngModel" required>
+            <div [hidden]="address.valid || address.pristine" class="invalid-feedback">
+              Please enter your address
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, suite, etc. (optional)" [(ngModel)]="customer.apartment"
+              name="apartment">
+          </div>
+    
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputCity" placeholder="City" [(ngModel)]="customer.city" name="city" #city="ngModel"
+              required>
+            <div [hidden]="city.valid || city.pristine" class="invalid-feedback">
+              Please enter your city
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-xs-12 col-md-4">
+              <label class="select-label" for="country">Country</label>
+              <select id="country" class="form-control" [(ngModel)]="customer.country" name="country" required>
+                <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+              </select>
+            </div>
+    
+            <div class="form-group col-xs-12 col-md-4">
+              <label class="select-label" for="state">State</label>
+              <div *ngIf="customer.country === ''">
+                <select id="state" class="form-control" [(ngModel)]="customer.state" name="state" required>
+                  <option selected>Choose..</option>
+                </select>
+              </div>
+              <div *ngIf="customer.country === 'United States'">
+                <select id="inputState" class="form-control" [(ngModel)]="customer.state" name="state" required>
+                  <option *ngFor="let state of USstates" [value]="state">{{state}}</option>
+                </select>
+              </div>
+              <div *ngIf="customer.country === 'Canada'">
+                <select id="inputState" class="form-control" [(ngModel)]="customer.state" name="state" required>
+                  <option *ngFor="let state of canadaStates" [value]="state">{{state}}</option>
+                </select>
+              </div>
+            </div>
+    
+            <div class="form-group col-xs-12 col-md-4">
+              <input type="text" class="form-control" id="inputZip" placeholder="Zip code" [(ngModel)]="customer.zipcode" name="zipcode"
+                #zipcode="ngModel" required>
+              <div [hidden]="zipcode.valid || zipcode.pristine" class="invalid-feedback">
+                Please enter your zip / postal code and Please enter a valid zip / postal code for , United States
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Phone (required)" [(ngModel)]="customer.phone" name="phone"
+              #phone="ngModel" required>
+            <div [hidden]="phone.valid || phone.pristine" class="invalid-feedback">
+              Please enter a valid phone number
+            </div>
+          </div>
+  
+        </div>
+      </form>
+    </div>
   </div>
 
   <div class="navigation col-md-12">
