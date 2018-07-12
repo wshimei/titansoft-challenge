@@ -11,8 +11,8 @@ export class PaymentService {
   constructor() { }
 
   private _paymentDetails = new BehaviorSubject<PaymentInterface>({
-    cardHolderName: '', billingAddress: []
-  });
+    // tslint:disable-next-line:max-line-length
+    cardHolderName: '', firstName: '', lastName: '', company: '', address: '', apartment: '', city: '', country: '', state: '', zipcode: '', phone: '' });
 
   paymentDetails$ = this._paymentDetails.asObservable();
 

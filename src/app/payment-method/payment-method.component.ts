@@ -94,7 +94,7 @@ export class PaymentMethodComponent implements OnInit, OnDestroy {
   }
 
   async onSubmit(form: NgForm) {
-    const { token, error } = await stripe.createToken(this.card);
+    const { token, error } = await stripe.createToken(this.cardNumber);
 
     if (error) {
       console.log('Something is wrong:', error);
@@ -119,8 +119,12 @@ export class PaymentMethodComponent implements OnInit, OnDestroy {
   }
 
   addBillingAddress() {
-    console.log(this.payment);
     this.paymentService.addPaymentDetails(this.payment);
+  }
+
+  submitForms(checkout) {
+    this.addBillingAddress();
+    this.onSubmit(checkout);
   }
 
 }
