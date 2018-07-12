@@ -198,5 +198,11 @@ select.form-control {
   .amazon-pay {
       padding: 1.5em 0em 0.5em 0em;
   }
+  #card-cvc, #card-expiry {
+      width: 90%;
+      margin-left: 15px;
+  }
+  #card-holder {
+    width: 90%;
+  }
 }
-
